@@ -1,1 +1,1 @@
-# Tugas Besar TBO kelompok 6
+# Teori Bahasa dan Automata kelompok 6

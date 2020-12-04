@@ -32,6 +32,7 @@ class Masuk extends CI_Controller
             'keterangan' => $keterangan,
             'tanggal' => $tanggal,
             'jumlah' => $jumlah,
+            'tipe' => masuk,
         );
         
         $this->Masuk_model->InsertDataMsk($datainsert);
@@ -70,6 +71,7 @@ class Masuk extends CI_Controller
         'keterangan' => $keterangan,
         'tanggal' => $tanggal,
         'jumlah' => $jumlah,
+        'tipe' => masuk,
         );
 
         $this->Masuk_model->EditDataMsk($DataUpdate, $id);

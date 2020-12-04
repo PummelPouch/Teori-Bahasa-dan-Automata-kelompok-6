@@ -6,7 +6,9 @@ class Keluar_model extends CI_Model
     public function getDataKeluar()
     {
         $this->db->select('*');
-        $this->db->from('keluar');
+        $this->db->from('kas');
+        $where = "tipe='keluar'";
+        $this->db->where($where);
         $query = $this->db->get();
         return $query->result();
     }
@@ -20,38 +22,38 @@ class Keluar_model extends CI_Model
 
     public function countKeluar()
     {
-        $sql = "Select count(id) as total from keluar";
+        $sql = "Select count(id) as total from kas where tipe='keluar'";
         $result = $this->db->query($sql);
         return $result->row()->total;
     }
     public function sumKeluar()
     {
-        $sql = "Select sum(jumlah) as total from keluar";
+        $sql = "Select sum(jumlah) as total from kas where tipe='keluar'";
         $result = $this->db->query($sql);
         return $result->row()->total;
     }
 
     public function InsertDataKlr($data)
     {
-        $this->db->insert('keluar', $data);
+        $this->db->insert('kas', $data);
     }
 
     public function DeleteDataKlr($val)
     {
         $this->db->where('id',$val);
-        $this->db->delete('keluar');
+        $this->db->delete('kas');
     }
 
     public function EditDataKlr($data, $id)
     {
         $this->db->where('id',$id);
-        $this->db->update('keluar', $data);
+        $this->db->update('kas', $data);
     }
 
     public function getDataKeluarDetail($id)
     {
         $this->db->where('id',$id);
-        $query = $this->db->get('keluar');
+        $query = $this->db->get('kas');
         return $query->row();
     }
 }

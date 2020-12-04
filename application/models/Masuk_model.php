@@ -6,7 +6,9 @@ class Masuk_model extends CI_Model
     public function getDataMasuk()
     {
         $this->db->select('*');
-        $this->db->from('masuk');
+        $this->db->from('kas');
+        $where = "tipe='masuk'";
+        $this->db->where($where);
         $query = $this->db->get();
         return $query->result();
     }
@@ -20,38 +22,38 @@ class Masuk_model extends CI_Model
 
     public function countMasuk()
     {
-        $sql = "Select count(id) as total from masuk";
+        $sql = "Select count(id) as total from kas where tipe='masuk'";
         $result = $this->db->query($sql);
         return $result->row()->total;
     }
     public function sumMasuk()
     {
-        $sql = "Select sum(jumlah) as total from masuk";
+        $sql = "Select sum(jumlah) as total from kas where tipe='masuk'";
         $result = $this->db->query($sql);
         return $result->row()->total;
     }
 
     public function InsertDataMsk($data)
     {
-        $this->db->insert('masuk', $data);
+        $this->db->insert('kas', $data);
     }
 
     public function DeleteDataMsk($val)
     {
         $this->db->where('id',$val);
-        $this->db->delete('masuk');
+        $this->db->delete('kas');
     }
 
     public function EditDataMsk($data, $id)
     {
         $this->db->where('id',$id);
-        $this->db->update('masuk', $data);
+        $this->db->update('kas', $data);
     }
 
     public function getDataMasukDetail($id)
     {
         $this->db->where('id',$id);
-        $query = $this->db->get('masuk');
+        $query = $this->db->get('kas');
         return $query->row();
     }
 

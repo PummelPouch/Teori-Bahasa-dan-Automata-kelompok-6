@@ -37,7 +37,7 @@
   <tr>
     <th scope="row"><?php echo $count ?></th>
     <td><?php echo $row->keterangan ?></td>
-    <td><?php echo $row->tanggal ?></td>
+    <td><?php echo date('d F Y', strtotime($row->tanggal)); ?></td>
     <td>Rp. <?php echo number_format($row->jumlah,0,',','.')?>,-</td>
     <td style="text-align:center;"><a href="<?php echo base_url('masuk/editmasuk/') . $row->id ?>" class="btn fas fa-edit bg-warning p-2 text-white rounded" data-toggle="tooltip" title="Edit"></a></td>
     <td style="text-align:center;"><a href="<?php echo base_url('masuk/DeleteData/') . $row->id ?>" class="btn far fa-trash-alt bg-danger p-2 text-white rounded" data-toggle="tooltip" title="Delete" onclick="return confirm('Delete?');"></a></td>

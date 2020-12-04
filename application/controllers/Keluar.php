@@ -32,6 +32,7 @@ class Keluar extends CI_Controller
         'keterangan' => $keterangan,
         'tanggal' => $tanggal,
         'jumlah' => $jumlah,
+        'tipe' => keluar,
         );
 
         $this->Keluar_model->InsertDataKlr($datainsert);
@@ -69,6 +70,7 @@ class Keluar extends CI_Controller
         'keterangan' => $keterangan,
         'tanggal' => $tanggal,
         'jumlah' => $jumlah,
+        'tipe' => keluar,
         );
 
         $this->Keluar_model->EditDataKlr($DataUpdate, $id);

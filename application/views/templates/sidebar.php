@@ -35,6 +35,11 @@
     <i class="fas fa-arrow-up pr-1"></i>
     <span>Kas Keluar</span></a>
 </li>
+<li class="nav-item">
+  <a class="nav-link" href="<?=site_url('laporan')?>">
+    <i class="fas fa-scroll pr-1"></i>
+    <span>Laporan</span></a>
+</li>
 
 <!-- Divider -->
 <hr class="sidebar-divider">
